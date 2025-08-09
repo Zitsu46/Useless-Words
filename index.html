@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Swear Word List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-cyan-900 to-teal-800 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-white mb-4 text-center">🌐 Global Swear Word Database</h1>
+        <p class="text-center text-gray-300 mb-6">Type a country or language to see the swear words from that region.</p>
+
+        <div class="flex justify-center mb-4">
+            <input id="countryInput" type="text" placeholder="Enter country or language" class="px-4 py-2 rounded-l-lg bg-white/10 text-white placeholder-gray-400">
+            <button id="searchBtn" class="px-4 py-2 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600">Search</button>
+        </div>
+
+        <div class="bg-white/10 p-4 rounded-lg text-gray-200 overflow-y-auto max-h-[70vh]">
+            <ul id="swearList" class="list-disc pl-6 space-y-1"></ul>
+        </div>
+    </div>
+
+    <script>
+        const swearDatabase = {
+            "arabic": ["سكس", "طيز", "شرج", "لعق", "لحس", "مص", "تمص", "بيضان", "ثدي", "بز", "بزاز", "حلمة", "مفلقصة", "بظر", "كس", "فرج", "شهوة", "شاذ", "مبادل", "عاهرة", "جماع", "قضيب", "زب", "لوطي", "لواط"],
+            "czech": ["bordel", "buzna", "čumět", "čurák", "debil", "do piče", "do prdele", "držťka", "držka", "flundra", "hajzl", "hovno", "chcanky", "chuj", "jebat", "kokot", "kokotina", "koňomrd", "kunda", "kurva", "mamrd", "mrdat", "mrdka", "mrdník", "oslošoust"],
+            "danish": ["anus", "bøsserøv", "cock", "fisse", "fissehår", "fuck", "hestepik", "kussekryller", "lort", "luder", "pik", "pikhår", "pikslugeri", "piksutteri", "pis", "røv", "røvhul", "røvskæg", "røvsprække", "shit"],
+            "german": ["analritter", "arsch", "arschficker", "arschlecker", "arschloch", "bimbo", "bratze", "bumsen", "bonze", "dödel", "fick", "ficken", "flittchen", "fotze", "fratze", "hackfresse", "hure", "hurensohn", "ische", "kackbratze", "kacke", "kacken", "kackwurst", "kampflesbe", "kanake"],
+            "english": ["2g1c", "2 girls 1 cup", "acrotomophilia", "alabama hot pocket", "alaskan pipeline", "anal", "anilingus", "anus", "apeshit", "arsehole", "ass", "asshole", "assmunch", "auto erotic", "autoerotic", "babeland", "baby batter", "baby juice", "ball gag", "ball gravy", "ball kicking", "ball licking", "ball sack", "ball sucking", "bangbros"],
+            "esperanto": ["bugren", "bugri", "bugru", "ĉiesulino", "ĉiesulo", "diofek", "diofeka", "fek", "feken", "fekfikanto", "feklekulo", "fekulo", "fik", "fikado", "fikema", "fikfek", "fiki", "fikiĝi", "fikiĝu", "fikilo", "fikklaŭno", "fikota", "fiku", "forfiki", "forfikiĝu"],
+            "spanish": ["Asesinato", "asno", "bastardo", "Bollera", "Cabrón", "Caca", "Chupada", "Chupapollas", "Chupetón", "concha", "Concha de tu madre", "Coño", "Coprofagía", "Culo", "Drogas", "Esperma", "Fiesta de salchichas", "Follador", "Follar", "Gilipichis", "Gilipollas", "Hacer una paja", "Haciendo el amor", "Heroína", "Hija de puta"],
+            "persian": ["آب کیر", "ارگاسم", "برهنه", "پورن", "پورنو", "تجاوز", "تخمی", "جق", "جقی", "جلق", "جنده", "چوچول", "حشر", "حشری", "داف", "دودول", "ساک زدن", "سکس", "سکس کردن", "سکسی", "سوپر", "شق کردن", "شهوت", "شهوتی", "شونبول"],
+            "finnish": ["alfred nussi", "bylsiä", "haahka", "haista paska", "haista vittu", "hatullinen", "helvetisti", "hevonkuusi", "hevonpaska", "hevonperse", "hevonvittu", "hevonvitunperse", "hitosti", "hitto", "huorata", "häs­siä", "juosten kustu", "jutku", "jutsku", "jätkä", "kananpaska", "koiranpaska", "kuin esterin perseestä", "kulli", "kullinluikaus"],
+            "filipino": ["puta ka", "putang ina", "tang ina", "tangina", "burat", "bayag", "bobo", "nognog", "tanga", "ulol", "kantot", "anak ka ng puta", "ulol", "jakol"],
+            "french": ["baiser", "bander", "bigornette", "bite", "bitte", "bloblos", "bordel", "bourré", "bourrée", "brackmard", "branlage", "branler", "branlette", "branleur", "branleuse", "brouter le cresson", "caca", "chatte", "chiasse", "chier", "chiottes", "clito", "clitoris", "con", "connard"],
+            "french (canada - quebec)": ["noune", "osti", "criss", "crisse", "calice", "tabarnak", "viarge"],
+            "hindi": ["aand", "aandu", "balatkar", "balatkari", "behen chod", "beti chod", "bhadva", "bhadve", "bhandve", "bhangi", "bhootni ke", "bhosad", "bhosadi ke", "boobe", "chakke", "chinaal", "chinki", "chod", "chodu", "chodu bhagat", "chooche", "choochi", "choope", "choot", "choot ke baal"],
+            "hungarian": ["balfasz", "balfaszok", "balfaszokat", "balfaszt", "barmok", "barmokat", "barmot", "barom", "baszik", "bazmeg", "buksza", "bukszák", "bukszákat", "bukszát", "búr", "búrok", "csöcs", "csöcsök", "csöcsöket", "csöcsöt", "fasz", "faszfej", "faszfejek", "faszfejeket", "faszfejet"],
+            "italian": ["allupato", "ammucchiata", "anale", "arrapato", "arrusa", "arruso", "assatanato", "bagascia", "bagassa", "bagnarsi", "baldracca", "balle", "battere", "battona", "belino", "biga", "bocchinara", "bocchino", "bofilo", "boiata", "bordello", "brinca", "bucaiolo", "budiùlo", "busone"],
+            "japanese": ["3p", "g スポット", "s ＆ m", "sm", "sm女王", "xx", "アジアのかわいい女の子", "アスホール", "アナリングス", "アナル", "いたずら", "イラマチオ", "エクスタシー", "エスコート", "エッチ", "エロティズム", "エロティック", "オーガズム", "オカマ", "おしっこ", "おしり", "オシリ", "おしりのあな", "おっぱい", "オッパイ"],
+            "korean": ["강간", "개새끼", "개자식", "개좆", "개차반", "거유", "계집년", "고자", "근친", "노모", "니기미", "뒤질래", "딸딸이", "때슥", "또라이", "룰리타", "망가", "멜카", "미친", "미친새끼", "바바리맨", "변태", "병신", "보지", "불알"]
+        };
+
+        const swearListElement = document.getElementById('swearList');
+        const searchBtn = document.getElementById('searchBtn');
+        const countryInput = document.getElementById('countryInput');
+
+        function displaySwears(country) {
+            swearListElement.innerHTML = '';
+            const key = country.toLowerCase();
+            if (swearDatabase[key]) {
+                swearDatabase[key].forEach(word => {
+                    const li = document.createElement('li');
+                    li.textContent = word;
+                    swearListElement.appendChild(li);
+                });
+            } else {
+                const li = document.createElement('li');
+                li.textContent = 'No data found for this country/language.';
+                swearListElement.appendChild(li);
+            }
+        }
+
+        searchBtn.addEventListener('click', () => {
+            displaySwears(countryInput.value.trim());
+        });
+
+        countryInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                displaySwears(countryInput.value.trim());
+            }
+        });
+    </script>
+</body>
+</html>
