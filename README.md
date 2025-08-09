@@ -32,21 +32,21 @@ For Software:
 ### Project Documentation
 For Software:
 
-# Screenshots (Add at least 3)
+# Screenshots
 <img width="1906" height="904" alt="image" src="https://github.com/user-attachments/assets/a9d15c49-d71b-4f77-8f0c-b1fe84953a64" />
 
 Interface of the website
 
 
-![<img width="1911" height="899" alt="image" src="https://github.com/user-attachments/assets/80385678-4095-4517-953c-0937f1018ebf" />] 
+<img width="1911" height="899" alt="image" src="https://github.com/user-attachments/assets/80385678-4095-4517-953c-0937f1018ebf" />
 Swear words of language - English
 
 *Its an example of the website*
 
-![<img width="1914" height="910" alt="image" src="https://github.com/user-attachments/assets/97578176-8cd4-424a-ae44-06a959b41cd4" />]
+<img width="1914" height="910" alt="image" src="https://github.com/user-attachments/assets/97578176-8cd4-424a-ae44-06a959b41cd4" />
 Swear words of language - Hindi
 *Its an example of the website*
-Link to the website: useless-words.vercel.app
+Link to the website: [(useless-words.vercel.app)](url)
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
