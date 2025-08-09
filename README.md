@@ -1,33 +1,33 @@
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
-# [Useless Words] 🎯
+# Useless Words 🎯
 
 
 ## Basic Details
-### Team Name: [TowerHash]
+### Team Name: TowerHash
 
 
 ### Team Members
-- Team Lead: [ADIL ALI] - [Cochin University College Of Engineering Kuttanadu]
-- Member 2: [AKSHAY ANIL] - [Cochin University College Of Engineering Kuttanadu]
+- Team Lead: ADIL ALI - Cochin University College Of Engineering Kuttanadu
+- Member 2: AKSHAY ANIL - Cochin University College Of Engineering Kuttanadu
 
 
 ### Project Description
-[This project is a web-based **Global Swear Word Database** that allows users to type a country or language to view a list of common swear words from that region. Built with HTML, Tailwind CSS, and JavaScript, it features a searchable database covering multiple languages, including English, Spanish, Hindi, Malayalam, and Tamil.
-]
+This project is a web-based **Global Swear Word Database** that allows users to type a country or language to view a list of common swear words from that region. Built with HTML, Tailwind CSS, and JavaScript, it features a searchable database covering multiple languages, including English, Spanish, Hindi, Malayalam, and Tamil.
+
 
 ### The Problem (that doesn't exist)
-[Not knowing about any swear or bad words for calling(it's only for good mentality and manner people only).]
+Not knowing about any swear or bad words for calling(it's only for good mentality and manner people only).
 
 ### The Solution (that nobody asked for)
-[Providing the basic words they should know about.]
+Providing the basic words they should know about.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Html]
-- [canva code,chatgpt]
+- Html
+- canva code,chatgpt
 
 ### Project Documentation
 For Software:
@@ -39,11 +39,12 @@ Interface of the website
 
 
 ![<img width="1911" height="899" alt="image" src="https://github.com/user-attachments/assets/80385678-4095-4517-953c-0937f1018ebf" />] 
-(Swear words of language - English)
+Swear words of language - English
+
 *Its an example of the website*
 
 ![<img width="1914" height="910" alt="image" src="https://github.com/user-attachments/assets/97578176-8cd4-424a-ae44-06a959b41cd4" />]
-(Swear words of language - Hindi)
+Swear words of language - Hindi
 *Its an example of the website*
 Link to the website: useless-words.vercel.app
 
