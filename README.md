@@ -46,8 +46,8 @@ Swear words of language - English
 <img width="1914" height="910" alt="image" src="https://github.com/user-attachments/assets/97578176-8cd4-424a-ae44-06a959b41cd4" />
 Swear words of language - Hindi
 *Its an example of the website*
-Link to the website: [(useless-words.vercel.app)](url)
-
+Link to the website: [useless-words.vercel.app
+](url)
 ---
 Made with ❤️ at TinkerHub Useless Projects 
 
