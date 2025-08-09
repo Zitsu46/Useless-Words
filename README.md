@@ -41,13 +41,13 @@ Interface of the website
 <img width="1911" height="899" alt="image" src="https://github.com/user-attachments/assets/80385678-4095-4517-953c-0937f1018ebf" />
 Swear words of language - English
 
-*Its an example of the website*
+Its an example of the website
 
 <img width="1914" height="910" alt="image" src="https://github.com/user-attachments/assets/97578176-8cd4-424a-ae44-06a959b41cd4" />
 Swear words of language - Hindi
-*Its an example of the website*
-Link to the website: [useless-words.vercel.app
-](url)
+Its an example of the website
+Link to the website: (https://useless-words.vercel.app)
+
 ---
 Made with ❤️ at TinkerHub Useless Projects 
 
